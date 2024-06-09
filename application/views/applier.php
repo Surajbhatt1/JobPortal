@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <title>Home Page</title>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="<?php base_url();?>assets/css/bootstrap.min.css">
+     <link rel="stylesheet" href="<?php base_url();?>assets/css/font-awesome.min.css">
+     <link rel="stylesheet" href="<?php base_url();?>assets/css/owl.carousel.css">
+     <link rel="stylesheet" href="<?php base_url();?>assets/css/owl.theme.default.min.css">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="<?php base_url();?>assets/css/style.css">
+
+</head>
+	<body>
+
+
+<!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+               <span class="spinner-rotate"></span>
+          </div>
+     </section>
+
+
+     <!-- MENU -->
+     <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="#" class="navbar-brand">Online Job Portal</a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-nav-first">
+                         <li><a href="<?php echo site_url('Home')?>">Home</a></li>
+               <!--           <li><a href="job-listing.html">Jobs</a></li> -->
+                         <li><a href="<?php echo site_url('Aboutus')?>">About Us</a></li>
+                          <li><a href="<?php echo site_url('Signup')?>">Signup</a></li>
+                         <li><a href="<?php echo site_url('Login')?>">Login</a></li>
+                       <!--   <li><a href="<?php echo site_url('Terms')?>">Terms</a></li> -->
+                         <!-- <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" arcia-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
+                              
+                              <ul class="dropdown-menu">
+                                   <li><a href="team.html">Team</a></li>
+                                   <li><a href="testimonials.html">Testimonials</a></li>
+                                   <li><a href="terms.html">Terms</a></li>
+                              </ul>
+                         </li> -->
+                         <li><a href="<?php echo site_url('Contact')?>">Contact Us</a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+
+
+<!-- 
+    
+<div class="container">
+<div class="row align-items-center">
+                    <!-- data table start -->
+                       <div class="card-body">
+                        <div class="pagination-link">
+                                        <?= $this->pagination->create_links();?>
+                                      </div></br> -->
+     <!-- <h1>Jobs</h1> -->
+     <form method="POST" action="Applier/">
+          <table id="Applier" class="table table-striped table-bordered">
+               <thead>
+               <tr>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Contact</td>
+                    <td>Job Title</td>
+                    <td>Skills</td>
+               </tr>
+          </thead>
+          <tbody>
+
+                    <?php
+        
+                         foreach ($apply as $value)
+                          {
+                              $id = $value->apply_id;
+                         ?>
+                         <tr>
+                              <td><?=$value->name ;?></td>                                      
+                        <td><?=$value->email ;?></td>
+                        <td><?=$value->contact ;?></td>
+                        <td><?=$value->job_title ;?></td>
+                        <td><?=$value->skills ;?></td>
+
+                         </tr>
+                         <?php
+                    }
+                    ?>
+      </tbody>
+                                         <!-- <?= $this->pagination->create_links();?> -->
+                                      </table>
+                                      </form>
+<!--                          
+                                      <!-- <"MODAL ALLL"> -->
+                                              
+                                    </div>
+                    <!-- data table end -->                
+                </div>
+            <!-- </div> -->
+</div> -->
+
+
+
+
+
+
+          <!-- FOOTER -->
+     <footer id="footer">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-6">
+                         <div class="footer-info">
+                              <div class="section-title">
+                                   <h2>Headquarter</h2>
+                              </div>
+                              <address>
+                                   <p>B/717 Near Althan,Surat <br>India, 394221</p>
+                              </address>
+
+                              <ul class="social-icon">
+                                   <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                   <li><a href="#" class="fa fa-twitter"></a></li>
+                                   <li><a href="#" class="fa fa-instagram"></a></li>
+                              </ul>
+
+                              <div class="copyright-text"> 
+                                   <p>Copyright &copy; 2021 <br>Online Job Portal</p>
+                                 <!--   <p>Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a></p> -->
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                         <div class="footer-info">
+                              <div class="section-title">
+                                   <h2>Contact Info</h2>
+                              </div>
+                              <address>
+                                   <p>+91 8551946807</p>
+                                   <p><a href="mailto:Jobs@company.com">Jobs@company.com</a></p>
+                              </address>
+
+                              <div class="footer_menu">
+                                   <h2>Quick Links</h2>
+                                   <ul>
+                                        <li><a href="<?php echo site_url('Home')?>">Home</a></li>
+                                        <li><a href="<?php echo site_url('Aboutus')?>">About Us</a></li><br>
+                                       <!--  <li><a href="<?php echo site_url('Terms')?>">Terms & Conditions</a></li> -->
+                                        <li><a href="<?php echo site_url('Contact')?>">Contact Us</a></li>
+                                   </ul>
+                              </div>
+                         </div>
+                    </div>
+
+                    <!-- <div class="col-md-4 col-sm-12">
+                         <div class="footer-info newsletter-form">
+                              <div class="section-title">
+                                   <h2>Newsletter Signup</h2>
+                              </div>
+                              <div>
+                                   <div class="form-group">
+                                        <form action="#" method="get">
+                                             <input type="email" class="form-control" placeholder="Enter your email" name="email" id="email" required>
+                                             <input type="submit" class="form-control" name="submit" id="form-submit" value="Send me">
+                                        </form>
+                                        <span><sup>*</sup> Please note - we do not spam your email.</span>
+                                   </div>
+                              </div>
+                         </div>
+                    </div> -->
+                    
+               </div>
+          </div>
+     </footer>
+
+          
+           <!-- SCRIPTS -->
+     <script src="<?php base_url();?>assets/js/jquery.js"></script>
+     <script src="<?php base_url();?>assets/js/bootstrap.min.js"></script>
+     <script src="<?php base_url();?>assets/js/owl.carousel.min.js"></script>
+     <script src="<?php base_url();?>assets/js/smoothscroll.js"></script>
+     <script src="<?php base_url();?>assets/js/custom.js"></script>
+
+
+     </body>
+</html>
